@@ -14,7 +14,7 @@ const app_1 = require("./app");
 // como liste es asincrono, se debe especificar de esa manera
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
-        const app = new app_1.App();
+        const app = new app_1.App(4000);
         yield app.listen();
     });
 }
