@@ -1,6 +1,8 @@
 import express, { Application } from 'express';
 import morgan from 'morgan';
 
+import indexRoutes from './routes/index.routes';
+
 export class App{
 
     private app: Application
@@ -11,6 +13,7 @@ export class App{
         this.app = express();
         this.settings()
         this.middlewares();
+        this.routes();
     }
 
     // setea puerto en port
@@ -20,6 +23,10 @@ export class App{
 
     middlewares(){
         this.app.use(morgan('dev'))
+    }
+
+    routes(): void {
+        this.app.use('/',indexRoutes);
     }
 
 

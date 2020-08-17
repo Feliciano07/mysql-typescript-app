@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.App = void 0;
 const express_1 = __importDefault(require("express"));
 const morgan_1 = __importDefault(require("morgan"));
+const index_routes_1 = __importDefault(require("./routes/index.routes"));
 class App {
     //port ? puede ser tipo numero o string (union type) pueden recibir o no
     constructor(port) {
@@ -22,6 +23,7 @@ class App {
         this.app = express_1.default();
         this.settings();
         this.middlewares();
+        this.routes();
     }
     // setea puerto en port
     settings() {
@@ -29,6 +31,9 @@ class App {
     }
     middlewares() {
         this.app.use(morgan_1.default('dev'));
+    }
+    routes() {
+        this.app.use('/', index_routes_1.default);
     }
     /*  asyn await se usa para decir que va tomar un tiempo para ejecutar
         luego de eso muestra el mensaje
