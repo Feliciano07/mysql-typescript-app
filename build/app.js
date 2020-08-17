@@ -16,6 +16,7 @@ exports.App = void 0;
 const express_1 = __importDefault(require("express"));
 const morgan_1 = __importDefault(require("morgan"));
 const index_routes_1 = __importDefault(require("./routes/index.routes"));
+const post_routes_1 = __importDefault(require("./routes/post.routes"));
 class App {
     //port ? puede ser tipo numero o string (union type) pueden recibir o no
     constructor(port) {
@@ -34,6 +35,7 @@ class App {
     }
     routes() {
         this.app.use('/', index_routes_1.default);
+        this.app.use('/post', post_routes_1.default);
     }
     /*  asyn await se usa para decir que va tomar un tiempo para ejecutar
         luego de eso muestra el mensaje
