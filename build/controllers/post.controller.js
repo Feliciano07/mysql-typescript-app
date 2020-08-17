@@ -24,5 +24,16 @@ class PostController {
             return res.json(post[0]);
         });
     }
+    createPost(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const newPos = req.body;
+            //console.log(newPos);
+            const conne = yield database_1.connect();
+            yield conne.query('INSERT INTO posts SET ?', [newPos]);
+            return res.json({
+                text: 'publicacion creada'
+            });
+        });
+    }
 }
 exports.postController = new PostController();

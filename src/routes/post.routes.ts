@@ -17,6 +17,8 @@ class PostRoutes{
 
         this.router.get('/get',postController.getPost);
 
+        this.router.post('/crear',postController.createPost);
+
     }
 
 

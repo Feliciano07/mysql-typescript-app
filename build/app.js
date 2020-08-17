@@ -32,6 +32,8 @@ class App {
     }
     middlewares() {
         this.app.use(morgan_1.default('dev'));
+        this.app.use(express_1.default.json());
+        this.app.use(express_1.default.urlencoded({ extended: false }));
     }
     routes() {
         this.app.use('/', index_routes_1.default);

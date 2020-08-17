@@ -10,6 +10,7 @@ class PostRoutes {
     config() {
         this.router.get('/', post_controller_1.postController.post);
         this.router.get('/get', post_controller_1.postController.getPost);
+        this.router.post('/crear', post_controller_1.postController.createPost);
     }
 }
 const postRoutes = new PostRoutes();
