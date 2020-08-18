@@ -30,6 +30,42 @@ class PostController{
             text: 'publicacion creada'
         });
     }
+
+    public async Obtener(req: Request, res: Response): Promise<Response>{
+
+        const id_post = req.params.id;
+
+        const conne = await connect();
+
+        const post = await conne.query('SELECT * FROM posts WHERE id = ?',[id_post]);
+
+        return res.json(post[0]);
+    }
+
+    public async Eliminar(req: Request, res: Response): Promise<Response>{
+
+        const id_delete = req.params.id;
+        const conne = await connect();
+
+        await conne.query('DELETE FROM posts WHERE id = ? ', [id_delete]);
+
+        return res.json({
+            texto: 'Publicacion eliminada'
+        })
+    }
+
+    public async Actualizar(req: Request, res: Response): Promise<Response> {
+        const id_delete = req.params.id;
+        const update: Post = req.body;
+        
+        const conne = await connect();
+
+        await conne.query('UPDATE posts set ? WHERE id = ?', [update,id_delete])
+
+        return res.json({
+            message: 'post update'
+        })
+    }
 }
 
 export const postController = new PostController();

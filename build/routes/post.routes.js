@@ -11,6 +11,9 @@ class PostRoutes {
         this.router.get('/', post_controller_1.postController.post);
         this.router.get('/get', post_controller_1.postController.getPost);
         this.router.post('/crear', post_controller_1.postController.createPost);
+        this.router.get('/obtener/:id', post_controller_1.postController.Obtener);
+        this.router.delete('/eliminar/:id', post_controller_1.postController.Eliminar);
+        this.router.put('/actu/:id', post_controller_1.postController.Actualizar);
     }
 }
 const postRoutes = new PostRoutes();

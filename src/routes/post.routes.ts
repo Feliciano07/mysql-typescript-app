@@ -19,6 +19,11 @@ class PostRoutes{
 
         this.router.post('/crear',postController.createPost);
 
+        this.router.get('/obtener/:id', postController.Obtener)
+
+        this.router.delete('/eliminar/:id',postController.Eliminar);
+
+        this.router.put('/actu/:id',postController.Actualizar);
     }
 
 
