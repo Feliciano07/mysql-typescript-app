@@ -13,17 +13,17 @@ class PostRoutes{
 
 
     config (): void{
-        this.router.get('/',postController.post)
+        // this.router.get('/',postController.post)
 
-        this.router.get('/get',postController.getPost);
+        this.router.get('/',postController.getPost);
 
-        this.router.post('/crear',postController.createPost);
+        this.router.post('/',postController.createPost);
 
-        this.router.get('/obtener/:id', postController.Obtener)
+        this.router.get('/:id', postController.Obtener)
 
-        this.router.delete('/eliminar/:id',postController.Eliminar);
+        this.router.delete('/:id',postController.Eliminar);
 
-        this.router.put('/actu/:id',postController.Actualizar);
+        this.router.put('/:id',postController.Actualizar);
     }
 
 
