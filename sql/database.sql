@@ -11,4 +11,7 @@ CREATE TABLE posts(
 );
 
 
+
+
+
 DESCRIBE posts;
