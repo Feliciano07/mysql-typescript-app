@@ -6,6 +6,8 @@ CREATE TABLE posts(
     description NVARCHAR(200) NOT NULL,
     image_url NVARCHAR(200),
     create_at TIMESTAMP DEFAULT current_timestamp
+
+    
 );
 
 
